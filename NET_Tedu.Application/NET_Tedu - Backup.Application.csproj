@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\NET_Tedu.DataEF\NET_Tedu.Data.EF.csproj" />
+    <ProjectReference Include="..\NET_Tedu.Data.EF\NET_Tedu.Data.EF.csproj" />
     <ProjectReference Include="..\NET_Tedu.Data\NET_Tedu.Data.csproj" />
     <ProjectReference Include="..\NET_Tedu.Utilities\NET_Tedu.Utilities.csproj" />
   </ItemGroup>

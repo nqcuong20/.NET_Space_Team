@@ -1,0 +1,140 @@
+Productcategory
+	ID
+	Alias
+	Name
+	Parent
+	SEO
+	CreateDate
+	SortingOrder
+	Status
+Product
+	ID
+	Name
+	Alias
+	SEO
+	CategoryID
+	CreateDate
+	Status
+	Price
+	PromotionPrice 
+	Quatity
+	Description
+	Content
+	HotFlg
+	Status
+
+
+Bill
+	CustomerId
+	CustomerName
+	CustomerAddress
+	CustomerEmail
+	BillDate
+	Status
+Bill detail
+	BillID
+	ProductID
+	Quatity
+	Price
+
+User
+Userrole
+role
+
+menu
+	ID
+	Name
+	URL
+	CSS
+	ParentID
+	Status
+	SortingOrder 
+blog
+	ID
+	Name
+	SEO
+	Description
+	Content
+	Image
+	Status
+
+slide 
+	ID
+	Name
+	URL
+	Image
+	Text
+	Sort
+	Status
+
+advertimentPage
+	ID
+	Name
+advertimentPosition
+	ID
+	PageId
+	Name
+advertiment
+	PositionID
+	Image
+	URL
+	Status
+
+
+brand
+	ID
+	Name
+	Image
+	Status
+
+footer
+	ID
+	Content
+ 
+language
+	ID
+	Name
+	Default
+
+ProductTag
+	ProductID
+	TagID
+BlogTag
+	BlogID
+	TagID
+Tag
+	ID
+	Name
+	Type
+
+Page
+	ID
+	Name
+	Content
+Feedback
+	Name
+	Email
+	Phone
+	Content
+	CreatedDate
+	Status
+
+Contact
+	Id
+	Name
+	Address
+	Phone
+	Website
+	Email
+	Longtitude
+	Latitude
+
+
+System Config
+	ID
+	Value1
+	Value2
+	Value3
+
+
+

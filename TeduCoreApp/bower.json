@@ -1,0 +1,13 @@
+{
+  "name": "asp.net",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Nguyễn Quốc Cường <60700939+nqcuong20@users.noreply.github.com>"
+  ],
+  "private": true,
+
+  "dependencies": {
+    "moment": "~2.19.1"
+  }
+}

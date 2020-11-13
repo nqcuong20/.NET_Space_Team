@@ -9,7 +9,6 @@
     "commit": "0ea6ff609f893d22b1b00a00555305e685bfcda3"
   },
   "_source": "https://github.com/emmerich/flot-orderBars.git",
-  "_target": "^1.0.0",
-  "_originalSource": "flot.orderbars",
-  "_direct": true
+  "_target": "~1.0.0",
+  "_originalSource": "flot.orderbars"
 }

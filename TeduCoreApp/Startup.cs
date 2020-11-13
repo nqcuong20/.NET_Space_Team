@@ -75,8 +75,12 @@ namespace TeduCoreApp
             services.AddTransient<DbInitializer>();
             services.AddScoped<IUserClaimsPrincipalFactory<AppUser>, CustomClaimsPrincipalFactory>();
 
-            services.AddTransient<IProductCategoryRepository,ProductCategoryRepository>();
 
+            //Repository
+            services.AddTransient<IProductCategoryRepository,ProductCategoryRepository>();
+            services.AddTransient<IFunctionRepository, FunctionRepository>();
+            services.AddTransient<IFunctionService, FunctionService>();
+            //Services
             services.AddTransient<IProductCategoryService, ProductCategoryService>();
 
             services.AddMvc().AddJsonOptions(options=>options.SerializerSettings.ContractResolver = new DefaultContractResolver());

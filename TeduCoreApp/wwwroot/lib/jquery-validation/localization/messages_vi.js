@@ -2,7 +2,6 @@
  * Translated default messages for the jQuery validation plugin.
  * Locale: VI (Vietnamese; Tiếng Việt)
  */
-//Hiển thị thông báo bằng tiếng việt
 $.extend( $.validator.messages, {
 	required: "Hãy nhập.",
 	remote: "Hãy sửa cho đúng.",

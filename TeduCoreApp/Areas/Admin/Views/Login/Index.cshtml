@@ -10,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Login</title>
+    <title>Login </title>
 
     <!-- Bootstrap -->
 
@@ -39,14 +39,14 @@
                         @Html.AntiForgeryToken()
                         <h1>Login</h1>
                         <div>
-                            <input type="text" class="form-control" name="userName" placeholder="UserName" id="txtUserName"  />
+                            <input type="text" class="form-control" name="userName" placeholder="User name" id="txtUserName" required="" />
                         </div>
                         <div>
-                            <input type="password" class="form-control" name="password" id="txtPassword" placeholder="Password"  />
+                            <input type="password" class="form-control" name="password" id="txtPassword" placeholder="Password" required="" />
                         </div>
                         <div>
-                            <a class="btn btn-default submit" href="#" id="btnLogin">Đăng nhập</a>
-                            <a class="reset_pass" href="#">Forgot Password?</a>
+                            <a class="btn btn-default submit" href="#" id="btnLogin">Login</a>
+                            <a class="reset_pass" href="#">Forgot password?</a>
                         </div>
 
                         <div class="clearfix"></div>

@@ -8,6 +8,5 @@ namespace TeduCoreApp.Data.IRepositories
 {
     public interface IFunctionRepository : IRepository<Function,string>
     {
-
     }
 }

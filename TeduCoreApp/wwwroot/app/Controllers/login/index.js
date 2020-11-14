@@ -5,7 +5,7 @@
 
     var registerEvents = function () {
         $('#frmLogin').validate({
-            errorClass: 'red',//lỗi màu đỏ
+            errorClass: 'red',
             ignore: [],
             lang: 'en',
             rules: {

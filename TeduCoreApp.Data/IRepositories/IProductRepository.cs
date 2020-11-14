@@ -6,7 +6,7 @@ using TeduCoreApp.Infrastructure.Interfaces;
 
 namespace TeduCoreApp.Data.IRepositories
 {
-    public interface IProductRepository : IRepository<Product, int>
+    public interface IProductRepository : IRepository<Product,int>
     {
     }
 }

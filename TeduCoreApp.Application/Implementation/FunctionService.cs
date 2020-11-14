@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Linq;
 using System.Threading.Tasks;
 using TeduCoreApp.Application.Interfaces;
 using TeduCoreApp.Application.ViewModels.System;
@@ -12,11 +12,13 @@ namespace TeduCoreApp.Application.Implementation
 {
     public class FunctionService : IFunctionService
     {
-        IFunctionRepository _functionRepository;
+        private IFunctionRepository _functionRepository;
+
         public FunctionService(IFunctionRepository functionRepository)
         {
             _functionRepository = functionRepository;
         }
+
         public void Dispose()
         {
             GC.SuppressFinalize(this);

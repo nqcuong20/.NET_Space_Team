@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
+//Phân trang
 namespace TeduCoreApp.Utilities.Dtos
 {
     public class PagedResult<T> : PagedResultBase where T :class

@@ -17,7 +17,6 @@ using TeduCoreApp.Data.Entities;
 
 namespace TeduCoreApp.Controllers
 {
-    [Authorize]
     [Route("[controller]/[action]")]
     public class AccountController : Controller
     {

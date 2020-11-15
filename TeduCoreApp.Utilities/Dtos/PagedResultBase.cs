@@ -7,6 +7,7 @@ namespace TeduCoreApp.Utilities.Dtos
 {
     public abstract class PagedResultBase
     {
+        //tính chia phân trang
         public int CurrentPage { get; set; }
 
         public int PageCount

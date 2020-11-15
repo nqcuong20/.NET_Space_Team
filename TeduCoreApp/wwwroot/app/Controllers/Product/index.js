@@ -1,8 +1,8 @@
 ﻿var productController = function () {
     this.initialize = function () {
-        loadCategories();
-        loadData();
-        registerEvents();
+        loadCategories(); //load castagories ra ngoài 
+        loadData(); //load sản phẩm (phải để ở dưới , sau khi load category xong rồi mới load cái sản phẩm)
+        registerEvents(); //load cái bản ghi
     }
 
     function registerEvents() {

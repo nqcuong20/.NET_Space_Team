@@ -5,6 +5,7 @@ using System.Text;
 //Phân trang
 namespace TeduCoreApp.Utilities.Dtos
 {
+    //kế thừa
     public class PagedResult<T> : PagedResultBase where T :class
     {
         public PagedResult()

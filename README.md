@@ -29,9 +29,9 @@ và hỗ trợ một phần Visual Basic .NET
 ### Có thể sử dụng các công cụ sau để lập trình:
 
 - Visual Studio
-- Visual Studio Code
-- Sublime Text
-- Vim
+- Microsoft SQL Server
+- GitHub
+
 ### Những điểm nổi bật của .NET:
 
 - Tính bảo mật cao, đáng tin cậy
@@ -41,7 +41,7 @@ và hỗ trợ một phần Visual Basic .NET
 ---
 ## 🚀 Nhóm thực hiện 
 ### :man_student: SPACE TEAM 
-**Student: **
+**Student**
 - Nguyễn Quốc Cường 	- 44.01.104.061 
 - Nguyễn Thị Kim Anh 	- 44.01.104.051
 - Dương Thái Nhật 		- 44.01.104.161 
@@ -52,4 +52,25 @@ và hỗ trợ một phần Visual Basic .NET
  Website bán hàng ( Khách Hàng + Admin )
 
 ---
-## 🛠️ Xây dựng Website 
+## 🛠️ Xây dựng Website
+- Tạo ứng dụng, Tổng quan cấu trúc dữ liệu 
+- Xây dựng cấu trúc Solution 
+- ASP.NET Core Identity
+- Phân tích và thiết kế cơ sở dữ liệu
+- Triển khai Entity để sinh ra database
+- Tạo data Access Layer
+- Seeding data tạo dữ liệu mẫu
+- Triển khai tần Service và AutoMapper
+- Sử dụng Migration ( Add-Migration + Update-Database)
+- Sử dụng Area tạo phần Admin 
+- Nhúng giao diện Admin và project (giao diện Gentelella Alela )
+- Tạo cấu trúc phần client JS
+- Xây dựng tính năng đăng nhập cho quản trị
+- Form validate trong jquery
+- Hiển trị thông tin đăng nhập admin qua Claim
+- Hiên trị danh sách menu quản trị động từ database
+- Hiển trị danh sách sản phẩm dạng grid ở phần product admin
+- Phân trang danh sách sản phẩm
+- Lọc sản phẩm qua AJAX Jquery
+
+

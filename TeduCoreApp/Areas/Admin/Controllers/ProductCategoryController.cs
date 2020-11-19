@@ -27,7 +27,7 @@ namespace TeduCoreApp.Areas.Admin.Controllers
         [HttpGet]
         public IActionResult GetById(int id)
         {
-            var model = _productCategoryService.GetById(id);
+            var model = _productCategoryService.GetById(id); //lấy ra id
 
             return new ObjectResult(model);
         }
@@ -61,7 +61,7 @@ namespace TeduCoreApp.Areas.Admin.Controllers
         {
             if (id == 0)
             {
-                return new BadRequestResult();
+                return new BadRequestResult();//nếu id =0 trả về request
             }
             else
             {

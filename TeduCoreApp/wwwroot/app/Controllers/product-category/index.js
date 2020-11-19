@@ -3,7 +3,7 @@
         loadData();
         registerEvents();
     }
-    function registerEvents() {
+    function registerEvents() {//khi bấm vào nút edt thì bật form delete lên
         $('#frmMaintainance').validate({
             errorClass: 'red',
             ignore: [],
@@ -15,14 +15,16 @@
             }
         });
 
-        $('#btnCreate').off('click').on('click', function () {
+        //ADD CATEGORY
+        $('#btnCreate').off('click').on('click', function () {//click bào button Create thì bật lên ( trường hợp mình click 2 cái thì mình dùng hàm off để lấy 1 cái thôi)
             initTreeDropDownCategory();
             $('#modal-add-edit').modal('show');
         });
 
+        //EDIT CATEGORY
         $('body').on('click', '#btnEdit', function (e) {
             e.preventDefault();
-            var that = $('#hidIdM').val();
+            var that = $('#hidIdM').val();///laayaas thông tin value
             $.ajax({
                 type: "GET",
                 url: "/Admin/ProductCategory/GetById",
@@ -30,13 +32,13 @@
                 dataType: "json",
                 beforeSend: function () {
                     tedu.startLoading();
-                },
-                success: function (response) {
+                },//hàm này chưa trả kết quả thì show loading
+                success: function (response) { //show lên form
                     var data = response;
                     $('#hidIdM').val(data.Id);
                     $('#txtNameM').val(data.Name);
                     initTreeDropDownCategory(data.CategoryId);
-
+                    //đọc dữ liệu ra
                     $('#txtDescM').val(data.Description);
 
                     $('#txtImageM').val(data.ThumbnailImage);
@@ -52,7 +54,7 @@
                     $('#txtHomeOrderM').val(data.HomeOrder);
 
                     $('#modal-add-edit').modal('show');
-                    tedu.stopLoading();
+                    tedu.stopLoading();//stop loading
 
                 },
                 error: function (status) {
@@ -62,9 +64,10 @@
             });
         });
 
+        //DELETE CATEGORY
         $('body').on('click', '#btnDelete', function (e) {
             e.preventDefault();
-            var that = $('#hidIdM').val();
+            var that = $('#hidIdM').val()//lấy id;
             tedu.confirm('Are you sure to delete?', function () {
                 $.ajax({
                     type: "POST",
@@ -73,7 +76,7 @@
                     dataType: "json",
                     beforeSend: function () {
                         tedu.startLoading();
-                    },
+                    },// startLoading
                     success: function (response) {
                         tedu.notify('Deleted success', 'success');
                         tedu.stopLoading();
@@ -87,8 +90,9 @@
             });
         });
 
+        //SAVE IN EDIT CATEGORY
         $('#btnSave').on('click', function (e) {
-            if ($('#frmMaintainance').valid()) {
+            if ($('#frmMaintainance').valid()) {//NẾU FORM HỢP LỆ THÌ
                 e.preventDefault();
                 var id = parseInt($('#hidIdM').val());
                 var name = $('#txtNameM').val();
@@ -214,14 +218,14 @@
 
                 $('#treeProductCategory').tree({
                     data: treeArr,
-                    dnd: true,
-                    onContextMenu: function (e, node) {
+                    dnd: true,//
+                    onContextMenu: function (e, node) {//cho phép bật chuột phải vào
                         e.preventDefault();
                         // select the node
                         //$('#tt').tree('select', node.target);
-                        $('#hidIdM').val(node.id);
+                        $('#hidIdM').val(node.id);//lấy id
                         // display context menu
-                        $('#contextMenu').menu('show', {
+                        $('#contextMenu').menu('show', {//có nghĩa giúp cho mình chuột phải vào thì nó hiển thị
                             left: e.pageX,
                             top: e.pageY
                         });

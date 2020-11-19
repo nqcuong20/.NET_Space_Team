@@ -1012,7 +1012,7 @@ namespace TeduCoreApp.Data.EF.Migrations
             modelBuilder.Entity("TeduCoreApp.Data.Entities.ProductTag", b =>
                 {
                     b.HasOne("TeduCoreApp.Data.Entities.Product", "Product")
-                        .WithMany()
+                        .WithMany("ProductTags")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade);
 

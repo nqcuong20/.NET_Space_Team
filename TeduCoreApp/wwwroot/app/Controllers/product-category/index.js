@@ -12,83 +12,84 @@
                 txtNameM: { required: true },
                 txtOrderM: { number: true },
                 txtHomeOrderM: { number: true }
+                //các trường bắt buộc
             }
         });
 
         //ADD CATEGORY
         $('#btnCreate').off('click').on('click', function () {//click bào button Create thì bật lên ( trường hợp mình click 2 cái thì mình dùng hàm off để lấy 1 cái thôi)
             initTreeDropDownCategory();
-            $('#modal-add-edit').modal('show');
+            $('#modal-add-edit').modal('show');//show ra modal
         });
 
         //EDIT CATEGORY
-        $('body').on('click', '#btnEdit', function (e) {
-            e.preventDefault();
-            var that = $('#hidIdM').val();///laayaas thông tin value
-            $.ajax({
-                type: "GET",
-                url: "/Admin/ProductCategory/GetById",
-                data: { id: that },
-                dataType: "json",
-                beforeSend: function () {
-                    tedu.startLoading();
-                },//hàm này chưa trả kết quả thì show loading
-                success: function (response) { //show lên form
-                    var data = response;
-                    $('#hidIdM').val(data.Id);
-                    $('#txtNameM').val(data.Name);
-                    initTreeDropDownCategory(data.CategoryId);
-                    //đọc dữ liệu ra
-                    $('#txtDescM').val(data.Description);
+        //$('body').on('click', '#btnEdit', function (e) {
+        //    e.preventDefault();
+        //    var that = $('#hidIdM').val();///laayaas thông tin value
+        //    $.ajax({
+        //        type: "GET",
+        //        url: "/Admin/ProductCategory/GetById",
+        //        data: { id: that },
+        //        dataType: "json",
+        //        beforeSend: function () {
+        //            tedu.startLoading();
+        //        },//hàm này chưa trả kết quả thì show loading
+        //        success: function (response) { //show lên form
+        //            var data = response;
+        //            $('#hidIdM').val(data.Id);
+        //            $('#txtNameM').val(data.Name);
+        //            initTreeDropDownCategory(data.CategoryId);
+        //            //đọc dữ liệu ra
+        //            $('#txtDescM').val(data.Description);
 
-                    $('#txtImageM').val(data.ThumbnailImage);
+        //            $('#txtImageM').val(data.ThumbnailImage);
 
-                    $('#txtSeoKeywordM').val(data.SeoKeywords);
-                    $('#txtSeoDescriptionM').val(data.SeoDescription);
-                    $('#txtSeoPageTitleM').val(data.SeoPageTitle);
-                    $('#txtSeoAliasM').val(data.SeoAlias);
+        //            $('#txtSeoKeywordM').val(data.SeoKeywords);
+        //            $('#txtSeoDescriptionM').val(data.SeoDescription);
+        //            $('#txtSeoPageTitleM').val(data.SeoPageTitle);
+        //            $('#txtSeoAliasM').val(data.SeoAlias);
 
-                    $('#ckStatusM').prop('checked', data.Status == 1);
-                    $('#ckShowHomeM').prop('checked', data.HomeFlag);
-                    $('#txtOrderM').val(data.SortOrder);
-                    $('#txtHomeOrderM').val(data.HomeOrder);
+        //            $('#ckStatusM').prop('checked', data.Status == 1);
+        //            $('#ckShowHomeM').prop('checked', data.HomeFlag);
+        //            $('#txtOrderM').val(data.SortOrder);
+        //            $('#txtHomeOrderM').val(data.HomeOrder);
 
-                    $('#modal-add-edit').modal('show');
-                    tedu.stopLoading();//stop loading
+        //            $('#modal-add-edit').modal('show');
+        //            tedu.stopLoading();//stop loading
 
-                },
-                error: function (status) {
-                    tedu.notify('Có lỗi xảy ra', 'error');
-                    tedu.stopLoading();
-                }
-            });
-        });
+        //        },
+        //        error: function (status) {
+        //            tedu.notify('Có lỗi xảy ra', 'error');
+        //            tedu.stopLoading();
+        //        }
+        //    });
+        //});
 
-        //DELETE CATEGORY
-        $('body').on('click', '#btnDelete', function (e) {
-            e.preventDefault();
-            var that = $('#hidIdM').val()//lấy id;
-            tedu.confirm('Are you sure to delete?', function () {
-                $.ajax({
-                    type: "POST",
-                    url: "/Admin/ProductCategory/Delete",
-                    data: { id: that },
-                    dataType: "json",
-                    beforeSend: function () {
-                        tedu.startLoading();
-                    },// startLoading
-                    success: function (response) {
-                        tedu.notify('Deleted success', 'success');
-                        tedu.stopLoading();
-                        loadData();
-                    },
-                    error: function (status) {
-                        tedu.notify('Has an error in deleting progress', 'error');
-                        tedu.stopLoading();
-                    }
-                });
-            });
-        });
+        ////DELETE CATEGORY
+        //$('body').on('click', '#btnDelete', function (e) {
+        //    e.preventDefault();
+        //    var that = $('#hidIdM').val()//lấy id;
+        //    tedu.confirm('Are you sure to delete?', function () {
+        //        $.ajax({
+        //            type: "POST",
+        //            url: "/Admin/ProductCategory/Delete",
+        //            data: { id: that },
+        //            dataType: "json",
+        //            beforeSend: function () {
+        //                tedu .startLoading();
+        //            },// startLoading
+        //            success: function (response) {
+        //                tedu.notify('Deleted success', 'success');
+        //                tedu.stopLoading();
+        //                loadData();
+        //            },
+        //            error: function (status) {
+        //                tedu.notify('Has an error in deleting progress', 'error');
+        //                tedu.stopLoading();
+        //            }
+        //        });
+        //    });
+        //});
 
         //SAVE IN EDIT CATEGORY
         $('#btnSave').on('click', function (e) {
@@ -171,8 +172,8 @@
     }
     function initTreeDropDownCategory(selectedId) {
         $.ajax({
-            url: "/Admin/ProductCategory/GetAll",
-            type: 'GET',
+            url: "/Admin/ProductCategory/GetAll", // sử dụng ajax
+            type: 'GET', 
             dataType: 'json',
             async: false,
             success: function (response) {

@@ -12,7 +12,7 @@ using TeduCoreApp.Data.Enums;
 namespace TeduCoreApp.Data.EF.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20201113132625_initial")]
+    [Migration("20201119091138_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -1013,7 +1013,7 @@ namespace TeduCoreApp.Data.EF.Migrations
             modelBuilder.Entity("TeduCoreApp.Data.Entities.ProductTag", b =>
                 {
                     b.HasOne("TeduCoreApp.Data.Entities.Product", "Product")
-                        .WithMany()
+                        .WithMany("ProductTags")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade);
 

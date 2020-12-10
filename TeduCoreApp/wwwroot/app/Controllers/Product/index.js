@@ -40,6 +40,33 @@
             initTreeDropDownCategory();
             $('#modal-add-edit').modal('show');
 
+
+        });
+        $('#btnSelectImg').on('click', function () {
+            $('#fileInputImage').click();
+        });
+        $("#fileInputImage").on('change', function () {
+            var fileUpload = $(this).get(0);
+            var files = fileUpload.files;
+            var data = new FormData();
+            for (var i = 0; i < files.length; i++) {
+                data.append(files[i].name, files[i]);
+            }
+            $.ajax({
+                type: "POST",
+                url: "/Admin/Upload/UploadImage",
+                contentType: false,
+                processData: false,
+                data: data,
+                success: function (path) {
+                    $('#txtImage').val(path);
+                    tedu.notify('Upload image succesful!', 'success');
+
+                },
+                error: function () {
+                    tedu.notify('There was error uploading files!', 'error');
+                }
+            });
         });
         $('body').on('click', '.btn-edit', function (e) {
             e.preventDefault();
@@ -191,20 +218,20 @@
         CKEDITOR.replace('txtContent', {});
 
         //Fix: cannot click on element ck in modal
-        //$.fn.modal.Constructor.prototype.enforceFocus = function () {
-        //    $(document)
-        //        .off('focusin.bs.modal') // guard against infinite focus loop
-        //        .on('focusin.bs.modal', $.proxy(function (e) {
-        //            if (
-        //                this.$element[0] !== e.target && !this.$element.has(e.target).length
-        //                // CKEditor compatibility fix start.
-        //                && !$(e.target).closest('.cke_dialog, .cke').length
-        //                // CKEditor compatibility fix end.
-        //            ) {
-        //                this.$element.trigger('focus');
-        //            }
-        //        }, this));
-        //};
+        $.fn.modal.Constructor.prototype.enforceFocus = function () {
+            $(document)
+                .off('focusin.bs.modal') // guard against infinite focus loop
+                .on('focusin.bs.modal', $.proxy(function (e) {
+                    if (
+                        this.$element[0] !== e.target && !this.$element.has(e.target).length
+                        // CKEditor compatibility fix start.
+                        && !$(e.target).closest('.cke_dialog, .cke').length
+                        // CKEditor compatibility fix end.
+                    ) {
+                        this.$element.trigger('focus');
+                    }
+                }, this));
+        };
 
     }
     function initTreeDropDownCategory(selectedId) {

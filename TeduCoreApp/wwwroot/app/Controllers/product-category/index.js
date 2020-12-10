@@ -19,7 +19,36 @@
         //ADD CATEGORY
         $('#btnCreate').off('click').on('click', function () {//click bào button Create thì bật lên ( trường hợp mình click 2 cái thì mình dùng hàm off để lấy 1 cái thôi)
             initTreeDropDownCategory();
+
+
             $('#modal-add-edit').modal('show');//show ra modal
+            $('#btnSelectImg').on('click', function () {
+                $('#fileInputImage').click();
+            });
+            $("#fileInputImage").on('change', function () {
+                var fileUpload = $(this).get(0);
+                var files = fileUpload.files;
+                var data = new FormData();
+                for (var i = 0; i < files.length; i++) {
+                    data.append(files[i].name, files[i]);
+                }
+                $.ajax({
+                    type: "POST",
+                    url: "/Admin/Upload/UploadImage",
+                    contentType: false,
+                    processData: false,
+                    data: data,
+                    success: function (path) {
+                        $('#txtImage').val(path);
+                        tedu.notify('Upload image succesful!', 'success');
+
+
+                    },
+                    error: function () {
+                        tedu.notify('There was error uploading files!', 'error');
+                    }
+                });
+            });
         });
 
         //EDIT CATEGORY

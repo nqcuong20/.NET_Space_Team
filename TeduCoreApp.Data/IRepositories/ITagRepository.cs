@@ -8,5 +8,5 @@ namespace TeduCoreApp.Data.IRepositories
 {
     public interface ITagRepository : IRepository<Tag, string>
     {
-    }
+    } 
 }

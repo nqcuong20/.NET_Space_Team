@@ -1,9 +1,7 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.ModelBinding;
 using TeduCoreApp.Application.Interfaces;
 using TeduCoreApp.Application.ViewModels.Product;
 using TeduCoreApp.Utilities.Helpers;
@@ -50,6 +48,7 @@ namespace TeduCoreApp.Areas.Admin.Controllers
         }
 
         [HttpGet]
+        //lấy ID
         public IActionResult GetById(int id)
         {
             var model = _productService.GetById(id);

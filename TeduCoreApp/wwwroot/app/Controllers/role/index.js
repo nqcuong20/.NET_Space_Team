@@ -5,7 +5,6 @@
         loadData();
         registerEvents();
     }
-
     function registerEvents() {
         //Init validation
         $('#frmMaintainance').validate({

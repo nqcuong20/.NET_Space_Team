@@ -1,7 +1,5 @@
 ﻿using AutoMapper;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using TeduCoreApp.Application.ViewModels.Product;
 using TeduCoreApp.Application.ViewModels.System;
 using TeduCoreApp.Data.Entities;
@@ -23,7 +21,8 @@ namespace TeduCoreApp.Application.AutoMapper
             CreateMap<AppUserViewModel, AppUser>()
                .ConstructUsing(c => new AppUser(c.Id.GetValueOrDefault(Guid.Empty), c.FullName, c.UserName,
                c.Email, c.PhoneNumber, c.Avatar, c.Status));
-
+            CreateMap<PermissionViewModel, Permission>()
+            .ConstructUsing(c => new Permission(c.RoleId, c.FunctionId, c.CanCreate, c.CanRead, c.CanUpdate, c.CanDelete));
         }
     }
 }

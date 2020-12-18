@@ -72,6 +72,19 @@ namespace TeduCoreApp.Areas.Admin.Controllers
             await _roleService.DeleteAsync(id);
             return new OkObjectResult(id);
         }
+        [HttpPost]
+        public IActionResult ListAllFunction(Guid roleId)
+        {
+            var functions = _roleService.GetListFunctionWithRole(roleId);
+            return new OkObjectResult(functions);
+        }
+
+        [HttpPost]
+        public IActionResult SavePermission(List<PermissionViewModel> listPermmission, Guid roleId)
+        {
+            _roleService.SavePermission(listPermmission, roleId);
+            return new OkResult();
+        }
 
 
     }

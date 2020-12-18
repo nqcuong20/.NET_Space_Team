@@ -9,6 +9,7 @@ using TeduCoreApp.Application.Interfaces;
 using TeduCoreApp.Application.ViewModels.System;
 using TeduCoreApp.Data.Entities;
 using TeduCoreApp.Data.Enums;
+using TeduCoreApp.Data.IRepositories;
 using TeduCoreApp.Infrastructure.Interfaces;
 
 namespace TeduCoreApp.Application.Implementation
@@ -30,6 +31,7 @@ namespace TeduCoreApp.Application.Implementation
 
         public bool CheckExistedId(string id)
         {
+            GC.SuppressFinalize(this);
             return _functionRepository.FindById(id) != null;
         }
 
@@ -62,7 +64,6 @@ namespace TeduCoreApp.Application.Implementation
         {
             return _functionRepository.FindAll(x => x.ParentId == parentId).ProjectTo<FunctionViewModel>();
         }
-
         public void Save()
         {
             _unitOfWork.Commit();

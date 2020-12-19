@@ -72,5 +72,3 @@ và hỗ trợ một phần Visual Basic .NET
 - Hiển trị danh sách sản phẩm dạng grid ở phần product admin
 - Phân trang danh sách sản phẩm
 - Lọc sản phẩm qua AJAX Jquery
-
-

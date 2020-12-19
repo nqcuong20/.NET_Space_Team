@@ -13,8 +13,7 @@ namespace TeduCoreApp.Data.Entities
     [Table("Products")]
     public class Product : DomainEntity<int>, ISwitchable, IDateTracking, IHasSeoMetaData
     {
-        public Product()
-        {
+        public Product() {
             ProductTags = new List<ProductTag>();
         }
 
@@ -115,21 +114,21 @@ namespace TeduCoreApp.Data.Entities
 
         public virtual ICollection<ProductTag> ProductTags { set; get; }
 
-        public string SeoPageTitle { set; get; }
+        public string SeoPageTitle {set;get;}
 
-        [Column(TypeName = "varchar(255)")]
+        [Column(TypeName ="varchar(255)")]
         [StringLength(255)]
-        public string SeoAlias { set; get; }
-
-        [StringLength(255)]
-        public string SeoKeywords { set; get; }
+        public string SeoAlias {set;get;}
 
         [StringLength(255)]
-        public string SeoDescription { set; get; }
+        public string SeoKeywords {set;get;}
 
-        public DateTime DateCreated { set; get; }
-        public DateTime DateModified { set; get; }
+        [StringLength(255)]
+        public string SeoDescription {set;get;}
 
-        public Status Status { set; get; }
+        public DateTime DateCreated {set;get;}
+        public DateTime DateModified {set;get;}
+
+        public Status Status {set;get;}
     }
 }

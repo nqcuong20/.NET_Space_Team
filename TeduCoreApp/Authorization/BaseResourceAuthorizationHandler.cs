@@ -13,7 +13,7 @@ namespace TeduCoreApp.Authorization
     public class BaseResourceAuthorizationHandler : AuthorizationHandler<OperationAuthorizationRequirement, string>
     {
         private readonly IRoleService _roleService;
-
+        
         public BaseResourceAuthorizationHandler(IRoleService roleService)
         {
             _roleService = roleService;

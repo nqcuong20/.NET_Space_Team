@@ -24,7 +24,6 @@
 
         <div class="title_right">
             <div class="col-md-2 col-sm-2 col-xs-12 form-group pull-right top_search">
-                <button class="btn btn-success" id="btn-create" type="button">Create</button>
                 @{
                     var result = await AuthorizationService.AuthorizeAsync(User, "USER", Operations.Create);
                 }
@@ -111,6 +110,7 @@
                 @if ((await AuthorizationService.AuthorizeAsync(User, "USER", Operations.Delete)).Succeeded)
                 {
                     <a href="#" data-id="{{Id}}" class="btn-delete"><i class="fa fa-trash-o"></i></a>
+
                 }
             </td>
         </tr>
@@ -125,4 +125,4 @@
         </label>
     </div>
 </script>
-@Html.Partial("_AddEditModal.cshtml") 
+@Html.Partial("_AddEditModal.cshtml")

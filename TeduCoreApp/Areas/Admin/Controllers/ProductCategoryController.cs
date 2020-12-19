@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.ModelBinding;
 using TeduCoreApp.Application.Interfaces;
 using TeduCoreApp.Application.ViewModels.Product;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 using TeduCoreApp.Utilities.Helpers;
 
 namespace TeduCoreApp.Areas.Admin.Controllers
@@ -27,7 +27,7 @@ namespace TeduCoreApp.Areas.Admin.Controllers
         [HttpGet]
         public IActionResult GetById(int id)
         {
-            var model = _productCategoryService.GetById(id); //lấy ra id
+            var model = _productCategoryService.GetById(id);
 
             return new ObjectResult(model);
         }
@@ -61,7 +61,7 @@ namespace TeduCoreApp.Areas.Admin.Controllers
         {
             if (id == 0)
             {
-                return new BadRequestResult();//nếu id =0 trả về request
+                return new BadRequestResult();
             }
             else
             {

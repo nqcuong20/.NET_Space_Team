@@ -1,9 +1,12 @@
 ﻿var productController = function () {
+    var quantityManagement = new QuantityManagement();
+
     this.initialize = function () {
         loadCategories();
         loadData();
         registerEvents();
         registerControls();
+        quantityManagement.initialize();
     }
 
     function registerEvents() {
@@ -120,6 +123,7 @@
             });
             return false;
         });
+
         $('#btn-export').on('click', function () {
             $.ajax({
                 type: "POST",

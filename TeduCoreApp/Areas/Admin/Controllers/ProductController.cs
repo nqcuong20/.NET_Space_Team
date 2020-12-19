@@ -2,12 +2,12 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using OfficeOpenXml;
 using OfficeOpenXml.Table;
 using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using System.Net.Http.Headers;
 using TeduCoreApp.Application.Interfaces;
 using TeduCoreApp.Application.ViewModels.Product;
@@ -21,7 +21,7 @@ namespace TeduCoreApp.Areas.Admin.Controllers
         private IProductCategoryService _productCategoryService;
         private readonly IHostingEnvironment _hostingEnvironment;
 
-        public ProductController(IProductService productService,
+        public ProductController(IProductService productService, 
             IProductCategoryService productCategoryService,
             IHostingEnvironment hostingEnvironment)
         {
@@ -104,6 +104,20 @@ namespace TeduCoreApp.Areas.Admin.Controllers
 
                 return new OkObjectResult(id);
             }
+        }
+        [HttpPost]
+        public IActionResult SaveQuantities(int productId, List<ProductQuantityViewModel> quantities)
+        {
+            _productService.AddQuantity(productId, quantities);
+            _productService.Save();
+            return new OkObjectResult(quantities);
+        }
+
+        [HttpGet]
+        public IActionResult GetQuantities(int productId)
+        {
+            var quantities = _productService.GetQuantities(productId);
+            return new OkObjectResult(quantities);
         }
 
         [HttpPost]

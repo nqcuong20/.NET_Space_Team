@@ -14,7 +14,7 @@ namespace TeduCoreApp.Areas.Admin.Controllers
         #region Initialize
 
         private IFunctionService _functionService;
-
+        
         public FunctionController(IFunctionService functionService)
         {
             this._functionService = functionService;

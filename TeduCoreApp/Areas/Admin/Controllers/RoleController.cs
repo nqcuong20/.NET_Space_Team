@@ -72,6 +72,8 @@ namespace TeduCoreApp.Areas.Admin.Controllers
             await _roleService.DeleteAsync(id);
             return new OkObjectResult(id);
         }
+
+
         [HttpPost]
         public IActionResult ListAllFunction(Guid roleId)
         {
@@ -85,7 +87,5 @@ namespace TeduCoreApp.Areas.Admin.Controllers
             _roleService.SavePermission(listPermmission, roleId);
             return new OkResult();
         }
-
-
     }
 }

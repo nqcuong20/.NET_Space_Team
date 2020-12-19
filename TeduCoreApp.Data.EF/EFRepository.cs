@@ -24,7 +24,7 @@ namespace TeduCoreApp.Data.EF
 
         public void Dispose()
         {
-            if (_context != null)
+          if(_context != null)
             {
                 _context.Dispose();
             }

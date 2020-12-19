@@ -16,6 +16,7 @@ namespace TeduCoreApp.Areas.Admin.Controllers
         private readonly IUserService _userService;
         private readonly IAuthorizationService _authorizationService;
 
+
         public UserController(IUserService userService, IAuthorizationService authorizationService)
         {
             _userService = userService;
@@ -26,6 +27,7 @@ namespace TeduCoreApp.Areas.Admin.Controllers
             var result = await _authorizationService.AuthorizeAsync(User, "USER", Operations.Read);
             if (result.Succeeded == false)
                 return new RedirectResult("/Admin/Login/Index");
+
             return View();
         }
         public IActionResult GetAll()

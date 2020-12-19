@@ -291,7 +291,7 @@ namespace TeduCoreApp.Data.EF.Migrations
                         .IsRequired()
                         .HasMaxLength(256);
 
-                    b.Property<Guid>("CustomerId");
+                    b.Property<Guid?>("CustomerId");
 
                     b.Property<string>("CustomerMessage")
                         .IsRequired()
@@ -922,8 +922,7 @@ namespace TeduCoreApp.Data.EF.Migrations
                 {
                     b.HasOne("TeduCoreApp.Data.Entities.AppUser", "User")
                         .WithMany()
-                        .HasForeignKey("CustomerId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("CustomerId");
                 });
 
             modelBuilder.Entity("TeduCoreApp.Data.Entities.BillDetail", b =>

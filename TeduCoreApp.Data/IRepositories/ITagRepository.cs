@@ -6,7 +6,7 @@ using TeduCoreApp.Infrastructure.Interfaces;
 
 namespace TeduCoreApp.Data.IRepositories
 {
-    public interface ITagRepository : IRepository<Tag, string>
+    public interface ITagRepository : IRepository<Tag,string>
     {
-    } 
+    }
 }

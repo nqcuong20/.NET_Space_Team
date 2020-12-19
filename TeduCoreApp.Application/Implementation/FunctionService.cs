@@ -16,12 +16,12 @@ namespace TeduCoreApp.Application.Implementation
 {
     public class FunctionService : IFunctionService
     {
-        private IRepository<Function, string> _functionRepository;
+        private IFunctionRepository _functionRepository;
         private IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
 
         public FunctionService(IMapper mapper,
-            IRepository<Function, string> functionRepository,
+            IFunctionRepository functionRepository,
             IUnitOfWork unitOfWork)
         {
             _functionRepository = functionRepository;
@@ -29,9 +29,9 @@ namespace TeduCoreApp.Application.Implementation
             _mapper = mapper;
         }
 
+
         public bool CheckExistedId(string id)
         {
-            GC.SuppressFinalize(this);
             return _functionRepository.FindById(id) != null;
         }
 
@@ -71,12 +71,14 @@ namespace TeduCoreApp.Application.Implementation
 
         public void Update(FunctionViewModel functionVm)
         {
+
             var functionDb = _functionRepository.FindById(functionVm.Id);
             var function = _mapper.Map<Function>(functionVm);
         }
 
         public void ReOrder(string sourceId, string targetId)
         {
+
             var source = _functionRepository.FindById(sourceId);
             var target = _functionRepository.FindById(targetId);
             int tempOrder = source.SortOrder;
@@ -86,6 +88,7 @@ namespace TeduCoreApp.Application.Implementation
 
             _functionRepository.Update(source);
             _functionRepository.Update(target);
+
         }
 
         public void UpdateParentId(string sourceId, string targetId, Dictionary<string, int> items)

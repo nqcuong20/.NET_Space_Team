@@ -119,7 +119,7 @@ namespace TeduCoreApp.Application.Implementation
 
             //Get all sibling
             var sibling = _productCategoryRepository.FindAll(x => items.ContainsKey(x.Id));
-            foreach (var child in sibling)
+            foreach(var child in sibling)
             {
                 child.SortOrder = items[child.Id];
                 _productCategoryRepository.Update(child);

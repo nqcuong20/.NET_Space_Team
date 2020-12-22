@@ -20,6 +20,7 @@
                 <table class="table table-inverse table-hover table-bordered">
                     <thead>
                         <tr class="text-body1">
+                            <th style="width:20px;" class="text-center">ID</th>
                             <th width="12%">Hình Ảnh</th>
 
                             <th class="text-center">Tên Sản Pẩm</th>
@@ -27,7 +28,7 @@
                             <th class="text-center" style="width:160px;">Số Lượng</th>
                             <th class="text-center" style="width:160px;">Thành Tiền</th>
                             <th class="text-center" style="width:20%;">Option</th>
-                            <th style="width:20px;" class="text-center">ID</th>
+
                         </tr>
                     </thead>
                     <tbody>
@@ -50,12 +51,15 @@
 
                             <form action="@Url.Action("updateitem")" method="get">
                                 <tr class="text-body1">
+                                    <th>@iten.product.ID</th>
                                     <th><img width="50%" src="~/public/images/@iten.product.img" alt=""></th>
                                     <th>@iten.product.name</th>
                                     @if (sale > 0)
                                     {
-                                        <th > <span class="text-danger"><Strike> @iten.product.price.ToString("N0") VND</Strike></span><br/>
-                                        @price.ToString("N0") VND</th>
+                                        <th>
+                                            <span class="text-danger"><Strike> @iten.product.price.ToString("N0") VND</Strike></span><br />
+                                            @price.ToString("N0") VND
+                                        </th>
                                     }
                                     else
                                     {
@@ -71,7 +75,7 @@
                                     </th>
                                     <th>@price1.ToString("N0") VND</th>
                                     <th><button type="submit" class="btn btn-sm btn-warning text-white"><i class="fas fa-retweet"></i></button> <a href="~/xoa-gio-hang?productID=@iten.product.ID" class="btn btn-sm btn-danger"><i class="far fa-trash-alt"></i></a>  </th>
-                                    <th>@iten.product.ID</th>
+
 
                                 </tr>
                             </form>

@@ -2434,7 +2434,6 @@
     <Compile Include="Controllers\FavoriteProductController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Library\Message.cs" />
-    <Compile Include="Controllers\LienheController.cs" />
     <Compile Include="Controllers\ModuleController.cs" />
     <Compile Include="Controllers\BaivietController.cs" />
     <Compile Include="Controllers\SanphamController.cs" />
@@ -2471,16 +2470,12 @@
     <Content Include="Views\web.config">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Views\Auth\_newPasswordFG.cshtml" />
     <Content Include="Areas\Admin\Views\Auth\_information.cshtml" />
     <Content Include="Areas\Admin\Views\Auth\_login.cshtml" />
     <Content Include="Areas\Admin\Views\Category\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Category\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Category\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Category\Trash.cshtml" />
-    <Content Include="Areas\Admin\Views\Contact\Details.cshtml" />
-    <Content Include="Areas\Admin\Views\Contact\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\Contact\Trash.cshtml" />
     <Content Include="Areas\Admin\Views\Dashboard\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Dashboard\_Statistical.cshtml" />
     <Content Include="Areas\Admin\Views\Dashboard\_userNav.cshtml" />
@@ -2626,7 +2621,6 @@
     <Content Include="Views\Sanpham\index.cshtml" />
     <Content Include="Views\Sanpham\category.cshtml" />
     <Content Include="Views\Sanpham\_Subcategory.cshtml" />
-    <Content Include="Views\Lienhe\Index.cshtml" />
     <Content Include="Views\Baiviet\Index.cshtml" />
     <Content Include="Views\Baiviet\_post_detail.cshtml" />
     <Content Include="Views\Baiviet\_post_category.cshtml" />
@@ -2658,8 +2652,6 @@
     <Content Include="Views\Cart\card_header.cshtml" />
     <Content Include="Views\FavoriteProduct\_listFavorite.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Auth\forgetPass.cshtml" />
-    <Content Include="Views\Auth\sendMailFinish.cshtml" />
     <Content Include="public\dist\css\adminlte.css.map" />
     <Content Include="public\dist\css\adminlte.min.css.map" />
     <Content Include="public\dist\css\alt\adminlte.components.css.map" />
@@ -2689,6 +2681,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Views\Auth\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />

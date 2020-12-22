@@ -45,7 +45,6 @@ namespace SpaceTeam.Controllers
                 order.created_ate = DateTime.Now;
                 order.updated_by = 1;
                 order.updated_at = DateTime.Now;
-                order.updated_by = 1;
                 order.status = 2;
                 order.exportdate = DateTime.Now;
                 db.Orders.Add(order);

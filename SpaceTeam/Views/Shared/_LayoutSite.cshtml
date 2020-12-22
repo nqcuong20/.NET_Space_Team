@@ -16,7 +16,7 @@
             </div>
         </div>*@
 
-    <div class="ajaxload-effect">
+    @*<div class="ajaxload-effect">
         <div class="loading-ajax-effect ">
             <img src="~/public/images/unnamed.gif" />
         </div>
@@ -26,18 +26,18 @@
         <div class="loading-ajax-effect-heart">
             <img src="~/public/images/instagram-likes.gif" />
         </div>
-    </div>
+    </div>*@
 
     @Html.Action("header", "module")
 
     <!-- /header-->
     <section class="position-relative">
-        <div class="container ">
+        @*<div class="container ">
             <div class="row py-2 ">
                 <div class="col-md-6"> <img style="width:60%;" src="~/public/images/logohung.png"></div>
                 <div class="col-md-6  float-right"> <img class="float-right" style="width:100%;" src="~/public/images/logohung2.png"></div>
             </div>
-        </div>
+        </div>*@
         @Html.Partial("_MessgeAlert")
     </section>
 
@@ -45,14 +45,14 @@
     @RenderBody()
     <div class="clearfix">  </div>
 
-    </section>
-    <section class="pt-4">
-        <div class="container-fluid bg-light pt-4 ">
+    
+    <section class="pt-2 mt-5" style="        background-color: #222f3e; color: white">
+        <div class="container-fluid  pt-2 " >
             <div class="container">
                 <div class="row ">
-                    <div class="col-md-2">
-                        <p class="font-dam text-xanhduong"> Hỗ Trợ Khách Hàng</p>
-                        <ul class="list-unstyled text-nau">
+                    <div class="col-md-4" style=" color: white">
+                        <p class="font-dam text-xanhduong" style=" color: white"> Hỗ Trợ Khách Hàng</p>
+                        <ul class="list-unstyled text-light">
                             <li>Thẻ Ưu Đãi</li>
                             <li>Phiếu Bảo Hành</li>
                             <li>Trung Tâm Bảo Hành</li>
@@ -60,9 +60,9 @@
                             <li>Thanh Toán Và Vận Chuyển</li>
                         </ul>
                     </div>
-                    <div class="col-md-3">
-                        <p class="font-dam text-xanhduong">Chính sách Mua hàng và Bảo hành</p>
-                        <ul class="list-unstyled text-nau">
+                    <div class="col-md-4">
+                        <p class="font-dam " style=" color: white">Chính sách Mua hàng và Bảo hành</p>
+                        <ul class="list-unstyled text-light">
                             <li>Chính sách Mua hàng và Bảo hành</li>
                             <li>Chính sách Bảo mật Thông tin</li>
                             <li>Chính sách Vận chuyển, Giao nhận</li>
@@ -70,35 +70,22 @@
                             <li>Thanh Toán Và Vận Chuyển</li>
                         </ul>
                     </div>
-                    <div class="col-md-3">
-                        <p class="font-dam text-xanhduong">Liên Hệ HungShop</p>
-                        <ul class="list-unstyled text-nau">
-                            <li><i class="fab fa-facebook-square text-info"></i>   Nguyen Hung</li>
-                            <li><i class="fab fa-google text-danger"></i>  vanhugnguyen</li>
-                            <li><i class="fab fa-instagram text-primary"></i>   vanhung_hihi</li>
-                            <li><i class="fab fa-youtube text-danger"></i>  hoclamgiau</li>
-                            <li> <i class="fab fa-twitter-square text-info"></i> Thanh Toán Và Vận Chuyển</li>
+                    <div class="col-md-4">
+                        <p class="font-dam " style=" color: white">Liên hệ SpaceTeam</p>
+                        <ul class="list-unstyledtext-light">
+                            <i class="fab fa-facebook-square text-info"></i> SpaceTeam Và Vận Chuyển
                         </ul>
                     </div>
-                    <div class="col-md-4">
-                        <p class="font-dam text-xanhduong">Đăng Kí Nhận Tin</p>
-                        <div class="btn-group w-100">
-                            <input type="input" class="form-control  " name="subrite">
-                            <button class="form-control btn btn-danger w-25">Submit</button>
-                        </div>
-                        <p class="font-dam text-xanhduong ">Đã Thông Báo Bộ Công Thương</p>
-                        <img src="https://canifa.com/skin/frontend/canifa/canifa-2019/~/public/images/icon/img-dang-ky.svg" alt="">
-                    </div>
+                    
                 </div>
             </div>
         </div>
-        <div class="card-footer text-center">
-            <span class=" text-center">© Copyright by TongLink </span>
+        <div class="card-footer text-center "  style="        background-color: white;">
+            <span class=" text-center text-dark" >© Copyright by SpaceTeam </span>
         </div>
 
     </section>
-    <div class="zalo-chat-widget" data-oaid="2618435205887793057" data-welcome-message="Rất vui khi được hỗ trợ bạn!" data-autopopup="0" data-width="350" data-height="420"></div>
-    <script src="https://sp.zalo.me/plugins/sdk.js"></script>
+    
     <!-- modal login-->
     <div class="container">
         <!-- Button to Open the Modal -->
@@ -123,7 +110,7 @@
                         </div>
                         <div class="container" style="background-color:#f1f1f1">
                             <button type="button" class="btn-button bg-success" data-dismiss="modal">Cancel</button>
-                            <span class="psw"> <a href="/quen-mat-khau">Quên mật khẩu?</a></span>
+                            
                         </div>
                     </form>
                 </div>

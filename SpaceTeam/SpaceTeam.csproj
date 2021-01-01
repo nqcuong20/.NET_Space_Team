@@ -189,6 +189,7 @@
     <Content Include="public\images\betrai\pt7.jpg" />
     <Content Include="public\images\betrai\pt8.jpg" />
     <Content Include="public\images\betrai\pt9.jpg" />
+    <Content Include="public\images\logo.png" />
     <Content Include="public\js\datatables.min.js" />
     <Content Include="public\js\mainAdmin.js" />
     <Content Include="public\plugins\bootstrap-colorpicker\css\bootstrap-colorpicker.css" />
@@ -2387,7 +2388,6 @@
     <Content Include="public\images\post\thoitrang\tt3.jpg" />
     <Content Include="public\images\post\thoitrang\tt4.jpg" />
     <Content Include="public\images\post\thoitrang\tt5.jpg" />
-    <Content Include="public\images\Download PDF Ks_team Leadership Styles Free Management Ebooks PDF.gif" />
     <Content Include="public\images\quanjeannam\qj1.jpg" />
     <Content Include="public\images\quanjeannam\qj2.jpg" />
     <Content Include="public\images\quanjeannam\qj3.jpg" />
